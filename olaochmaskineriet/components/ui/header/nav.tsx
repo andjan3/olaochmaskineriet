@@ -4,6 +4,7 @@ import useStore from "@/utils/store";
 import Image from "next/image";
 import { useState } from "react";
 import { SoundComponent } from "../sound-component";
+import SongkickWidget from "../iframe/iframe-component";
 
 export const Nav = ({ settings }: any) => {
   console.log(settings.story.content);
@@ -40,6 +41,7 @@ export const Nav = ({ settings }: any) => {
         </div>
       </nav>
       <SoundComponent settings={settings} />
+      {liveOpen && <SongkickWidget />}
     </header>
   );
 };
