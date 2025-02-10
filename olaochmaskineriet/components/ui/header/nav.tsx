@@ -2,14 +2,20 @@
 
 import useStore from "@/utils/store";
 import Image from "next/image";
-import { useState } from "react";
 import { SoundComponent } from "../sound-component";
 import SongkickWidget from "../iframe/iframe-component";
 
 export const Nav = ({ settings }: any) => {
-  console.log(settings.story.content);
-
-  const { soundOpen, setSoundOpen, liveOpen, setLiveOpen } = useStore();
+  const {
+    soundOpen,
+    setSoundOpen,
+    liveOpen,
+    setLiveOpen,
+    infoOpen,
+    setInfoOpen,
+    volumeOpen,
+    setVolumeOpen,
+  } = useStore();
 
   const handleOnClickSound = () => {
     setSoundOpen(!soundOpen);
@@ -19,9 +25,16 @@ export const Nav = ({ settings }: any) => {
     setLiveOpen(!liveOpen);
   };
 
-  const { content, live } = settings.story;
+  const handleOnClickInfo = () => {
+    setInfoOpen(!infoOpen);
+  };
+  const handleOnClickVolume = () => {
+    setVolumeOpen(!volumeOpen);
+  };
+
+  const { content } = settings.story;
   return (
-    <header className="absolute top-0 w-[100%]">
+    <header className="absolute top-0 w-[100%] h-[100vh]">
       <nav className="flex justify-between w-full ">
         <div className="w-[350px] h-[10vh] relative">
           <Image
@@ -33,10 +46,10 @@ export const Nav = ({ settings }: any) => {
         </div>
         <div className="flex z-10">
           <div className="button z-10" onClick={() => handleOnClickSound()}>
-            {soundOpen ? <div>Stäng</div> : <div>{content.link}</div>}
+            {soundOpen ? <div>Stäng</div> : <div>{content.podd_link}</div>}
           </div>
           <div className="button" onClick={() => handleOnClickLive()}>
-            {liveOpen ? <div>Stäng</div> : <div>{content.second_link}</div>}
+            {liveOpen ? <div>Stäng</div> : <div>{content.live_link}</div>}
           </div>
         </div>
       </nav>
