@@ -32,7 +32,7 @@ export const VideoBlock = ({ blok, settings }: any) => {
   };
 
   return (
-    <div className="relative w-[100%] h-[100vh]">
+    <div className="relative w-[100%] h-full">
       <video
         src={blok?.video?.filename}
         autoPlay
