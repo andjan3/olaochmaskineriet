@@ -14,3 +14,25 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.button-volume{
+  padding: 10px 10px;
+    margin: 20px;
+    background: #2a2a2a;
+    color: #fefefe;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    font-size: 17px;
+    right: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sublime {
+  p, span{
+    color: white !important;
+  }
+}
+.sublime-container{
+  background-color: rgb(39 39 42);
+  opacity: 0.5;
+}

@@ -9,7 +9,6 @@ const Page = async ({ params }: { params: Params }) => {
   const story = await getData("home");
   const settings = await getSettings();
 
-  console.log(story);
   return <StoryblokStory story={story} settings={settings} />;
 };
 
