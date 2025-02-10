@@ -9,6 +9,10 @@ interface IsOpenMenu {
   setInfoOpen: (value: boolean) => void;
   volumeOpen: boolean;
   setVolumeOpen: (value: boolean) => void;
+  videoBlock: string;
+  setVideoBlock: (value: string) => void;
+  soundOn: string;
+  setSoundOn: (value: string) => void;
 }
 
 const useStore = create<IsOpenMenu>((set) => ({
@@ -20,6 +24,10 @@ const useStore = create<IsOpenMenu>((set) => ({
   setInfoOpen: (value) => set({ infoOpen: value }),
   volumeOpen: false,
   setVolumeOpen: (value) => set({ volumeOpen: value }),
+  videoBlock: "",
+  setVideoBlock: (value) => set({ videoBlock: value }),
+  soundOn: "",
+  setSoundOn: (value) => set({ soundOn: value }),
 }));
 
 export default useStore;

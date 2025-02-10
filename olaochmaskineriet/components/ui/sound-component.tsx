@@ -1,7 +1,7 @@
 import useStore from "@/utils/store";
 import Image from "next/image";
 
-export const SoundComponent = ({ settings }: any) => {
+export const SoundComponent = ({ blok, settings }: any) => {
   const { soundOpen } = useStore();
 
   const { content } = settings.story;
