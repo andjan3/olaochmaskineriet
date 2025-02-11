@@ -6,9 +6,15 @@ export const SoundComponent = ({ blok, settings }: any) => {
 
   const { content } = settings.story;
   return (
-    <div className="fixed mx-auto h-screen z-10 w-[100%] p-4">
+    <div
+      className={` ${
+        soundOpen &&
+        "sound-container overflow-auto top-0 lg:top-24 fixed mx-auto h-screen z-10 w-[100%] p-4"
+      }`}
+    >
+      {soundOpen && <div className="opacity-5"></div>}
       {soundOpen && (
-        <div className="grid grid-cols-3 items-center justify-center mx-auto w-full gap-4">
+        <div className="grid lg:grid-cols-3 items-center lg:justify-center mx-auto w-full gap-4">
           {content.sound.map((el: any, index: number) => {
             return (
               <div className="flex flex-col gap-4" key={index}>

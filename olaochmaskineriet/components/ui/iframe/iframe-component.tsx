@@ -18,7 +18,7 @@ const SongkickWidget = () => {
   }, []);
 
   return (
-    <div className="fixed mx-auto h-screen z-10 w-[100%] p-4 ">
+    <div className="fixed mx-auto h-screen top-16 lg:top-24 w-[100%] p-4 z-20">
       {liveOpen && (
         <div>
           <Link

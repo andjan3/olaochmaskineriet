@@ -34,17 +34,18 @@ export const Nav = ({ settings }: any) => {
 
   const { content } = settings.story;
   return (
-    <header className="absolute top-0 w-[100%] h-[100vh]">
-      <nav className="flex justify-between w-full ">
-        <div className="w-[350px] h-[10vh] relative">
+    <header className="absolute top-0 w-[100%] h-[100vh] mt-16 lg:mt-0">
+      <nav className="lg:flex justify-between w-full ">
+        <div className="lg:w-[350px] h-[10vh] relative">
           <Image
             src={content.logo.filename}
             fill
-            className="object-cover z-10 mt-10"
+            className="object-cover z-10 mt-4 lg:mt-10"
             alt={content.logo.alt}
           />
         </div>
-        <div className="flex z-10">
+
+        <div className="flex z-20 fixed top-0 lg:static w-full justify-center lg:justify-end bg-white lg:bg-transparent">
           <div className="button z-10" onClick={() => handleOnClickSound()}>
             {soundOpen ? <div>Stäng</div> : <div>{content.podd_link}</div>}
           </div>

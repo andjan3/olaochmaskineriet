@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .button{
-  padding: 10px 20px;
-    margin: 20px;
+  padding: 10px 15px;
+    margin: 10px;
     background: #2a2a2a;
     color: #fefefe;
     font-weight: 700;
@@ -13,6 +13,17 @@
     right: 100px;
     border-radius: 20px;
     cursor: pointer;
+    height: 50px;
+ 
+}
+
+.sound-container{
+  background-color: rgb(39 39 42);
+  
+}
+
+.button-info{
+  visibility: hidden;
 }
 .button-volume{
   padding: 10px 10px;
@@ -29,10 +40,43 @@
 
 .sublime {
   p, span{
-    color: white !important;
+    color: black !important;
   }
 }
-.sublime-container{
-  background-color: rgb(39 39 42);
-  opacity: 0.5;
+
+
+
+@media screen and (min-width:1020px) {
+  .sublime-container{
+    background-color: rgb(39 39 42);
+    opacity: 0.5;
+  }
+
+  .sublime {
+    p, span{
+      color: white !important;
+    }
+  }
+  .button{
+ 
+      margin: 20px;
+     
+   
+  }
+
+  .button-info{
+    padding: 10px 20px;
+    margin: 10px;
+    background: #2a2a2a;
+    color: #fefefe;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    font-size: 17px;
+    right: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 50px;
+    visibility: visible;
+  }
+  
 }
