@@ -15,6 +15,7 @@ export const VideoBlock = ({ blok, settings }: any) => {
     setSoundOn,
     soundOn,
     videoBlock,
+    soundOpen,
   } = useStore();
 
   const handleOnClickVolume = () => {
@@ -61,7 +62,7 @@ export const VideoBlock = ({ blok, settings }: any) => {
         {blok.mute_button && (
           <div
             className={`${
-              infoOpen ? "hidden " : "button-volume lg:flex justify-between"
+              soundOpen ? "hidden " : "button-volume lg:flex justify-between"
             }`}
             onClick={() => handleOnClickVolume()}
           >
