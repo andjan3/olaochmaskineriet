@@ -1,18 +1,17 @@
 import useStore from "@/utils/store";
 import Image from "next/image";
 
-export const SoundComponent = ({ blok, settings }: any) => {
+export const SoundComponent = ({ settings }: any) => {
   const { soundOpen } = useStore();
 
   const { content } = settings.story;
   return (
     <div
-      className={` ${
+      className={`transition-opacity delay-500 animate-fade-right opacity-0 ${
         soundOpen &&
-        "sound-container overflow-auto top-0 lg:top-24 fixed mx-auto h-screen z-10 w-[100%] p-4"
+        "sound-container overflow-auto top-0 lg:top-24 fixed mx-auto h-screen z-10 w-[100%] p-4 opacity-100"
       }`}
     >
-      {soundOpen && <div className="opacity-5"></div>}
       {soundOpen && (
         <div className="grid lg:grid-cols-3 items-center lg:justify-center mx-auto w-full gap-4">
           {content.sound.map((el: any, index: number) => {
