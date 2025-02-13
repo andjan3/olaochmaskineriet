@@ -9,11 +9,11 @@ export const SoundComponent = ({ settings }: any) => {
     <div
       className={`transition-opacity delay-500 animate-fade-right opacity-0 ${
         soundOpen &&
-        "sound-container overflow-auto top-0 lg:top-24 fixed mx-auto h-screen z-10 w-[100%] p-4 opacity-100"
+        "sound-container overflow-auto top-0 fixed mx-auto h-screen z-10 w-[100%] p-4 opacity-80 pb-20 lg:pb-0"
       }`}
     >
       {soundOpen && (
-        <div className="grid lg:grid-cols-3 items-center lg:justify-center mx-auto w-full gap-4">
+        <div className="grid lg:grid-cols-3 items-center lg:justify-center mx-auto w-full gap-4 lg:mt-24">
           {content.sound.map((el: any, index: number) => {
             return (
               <div className="flex flex-col gap-4" key={index}>
