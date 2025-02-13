@@ -13,5 +13,5 @@ export async function getSettings() {
     throw new Error("Not Found");
   }
 
-  return data.data;
+  return data.data.story;
 }
