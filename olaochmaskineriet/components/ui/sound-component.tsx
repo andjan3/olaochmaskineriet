@@ -1,10 +1,18 @@
 import useStore from "@/utils/store";
 import Image from "next/image";
 
-export const SoundComponent = ({ settings }: any) => {
+interface SoundProps {
+  settings: {
+    content: {
+      sound: React.ReactNode[];
+    };
+  };
+}
+
+export const SoundComponent = ({ settings }: SoundProps) => {
   const { soundOpen } = useStore();
 
-  const { content } = settings.story;
+  const { content } = settings;
   return (
     <div
       className={`transition-opacity delay-500 animate-fade-right opacity-0 ${

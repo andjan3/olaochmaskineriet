@@ -5,17 +5,22 @@ import Image from "next/image";
 import { SoundComponent } from "../sound-component";
 import SongkickWidget from "../iframe/iframe-component";
 
-export const Nav = ({ settings }: any) => {
-  const {
-    soundOpen,
-    setSoundOpen,
-    liveOpen,
-    setLiveOpen,
-    infoOpen,
-    setInfoOpen,
-    volumeOpen,
-    setVolumeOpen,
-  } = useStore();
+interface Navprops {
+  settings: {
+    content: {
+      sound: React.ReactNode[];
+      logo: {
+        filename: string;
+        alt: string;
+      };
+      live_link: string;
+      podd_link: string;
+    };
+  };
+}
+
+export const Nav = ({ settings }: Navprops) => {
+  const { soundOpen, setSoundOpen, liveOpen, setLiveOpen } = useStore();
 
   const handleOnClickSound = () => {
     setSoundOpen(!soundOpen);
@@ -25,14 +30,8 @@ export const Nav = ({ settings }: any) => {
     setLiveOpen(!liveOpen);
   };
 
-  const handleOnClickInfo = () => {
-    setInfoOpen(!infoOpen);
-  };
-  const handleOnClickVolume = () => {
-    setVolumeOpen(!volumeOpen);
-  };
+  const { content } = settings;
 
-  const { content } = settings.story;
   return (
     <header className="absolute top-0 w-[100%] h-[100vh] mt-16 lg:mt-0">
       <nav className="lg:flex justify-between w-full ">

@@ -3,8 +3,35 @@ import { Sublime } from "./ui/sublime/sublime";
 import { MdVolumeOff } from "react-icons/md";
 import { MdVolumeUp } from "react-icons/md";
 
-export const VideoBlock = ({ blok, settings }: any) => {
-  const { content } = settings.story;
+interface VideoBlockProps {
+  blok: {
+    _uid: string;
+    mute_button: string;
+    video: {
+      filename: string;
+    };
+    info_content: React.ReactNode;
+    email_contact: React.ReactNode;
+    email_sublime: React.ReactNode;
+    contact: React.ReactNode;
+    sublime: string;
+    fb_link: {
+      cached_url: string;
+    };
+    ig_link: {
+      cached_url: string;
+    };
+  };
+
+  settings: {
+    content: {
+      info_link: string;
+    };
+  };
+}
+
+export const VideoBlock = ({ blok, settings }: VideoBlockProps) => {
+  const { content } = settings;
 
   const {
     volumeOpen,
